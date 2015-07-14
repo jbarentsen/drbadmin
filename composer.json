@@ -1,0 +1,21 @@
+{
+    "name": "jbit/drdbadmin",
+    "description": "Deutsche Ringerbund",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2"
+    ],
+    "homepage": "http://www.jbit.nl",
+    "require": {
+        "php": ">=5.5",
+        "zendframework/zendframework": "~2.5",
+        "zendframework/zend-developer-tools": "dev-master",
+        "doctrine/doctrine-module": "0.*",
+        "doctrine/doctrine-orm-module": "0.*",
+        "gedmo/doctrine-extensions": "dev-master",
+        "doctrine/migrations": "1.0.*@dev",
+        "doctrine/doctrine-migrations-bundle": "1.0.*",
+        "vgarvardt/zf-simple-migrations": "dev-master"
+    }
+}
