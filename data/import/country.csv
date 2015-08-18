@@ -1,0 +1,208 @@
+Wales;WAL;WA;1
+Afghanistan;AFG;AF;1
+South Africa;RSA;ZA;1
+Albania;ALB;AL;1
+Algeria;ALG;DZ;1
+Germany;GER;DE;1
+American Samoa;ASA;AS;1
+Angola;ANG;AO;1
+Saudi Arabia;KSA;SA;1
+Argentina;ARG;AR;1
+Armenia;ARM;AM;1
+Australia;AUS;AU;1
+Austria;AUT;AT;1
+Azerbaijan;AZE;AZ;1
+Bangladesh;BAN;BD;1
+Belarus;BLR;BY;1
+Belgium;BEL;BE;1
+Benin;BEN;BJ;1
+Bolivia;BOL;BO;1
+Bosnia and Herzegovina;BIH;BA;1
+Brazil;BRA;BR;1
+Bulgaria;BUL;BG;1
+Burkina Faso;BUR;BF;1
+Cambodia;CAM;KH;1
+Cameroon;CMR;CM;1
+Canada;CAN;CA;1
+Central African Republic;CAF;CF;1
+Chile;CHI;CL;1
+China;CHN;CN;1
+Cyprus;CYP;CY;1
+Colombia;COL;CO;1
+Congo;CGO;CG;1
+Congo;COD;CI;1
+South Korea;KOR;KR;1
+North Korea;PRK;KP;1
+Costa Rica;CRC;CR;1
+Cote d'Ivoire;CIV;CI;1
+Croatia;CRO;HR;1
+Cuba;CUB;CU;1
+Denmark;DEN;DK;1
+Dominica;DOM;DM;1
+Egypt;EGY;EG;1
+Ecuador;ECU;EC;1
+Spain;ESP;ES;1
+Estonia;EST;EE;1
+United States;USA;US;1
+Finland;FIN;FI;1
+France;FRA;FR;1
+Gambia;GAM;GM;1
+Georgia;GEO;GE;1
+England;ENG;EN;1
+Greece;GRE;GR;1
+Guam;GUM;GU;1
+Guatemala;GUA;GT;1
+Guinea;GUI;GN;1
+Guinea-Bissau;GBS;GW;1
+Netherlands;NED;NL;1
+Honduras;HON;HN;1
+Hungary;HUN;HU;1
+Northern Mariana Islands;IMN;MP;1
+Mauritius;MRI;MU;1
+Solomon Islands;SOL;SB;1
+Virgin Islands;ISV;VI;1
+India;IND;IN;1
+Indonesia;INA;ID;1
+Iran;IRI;IR;1
+Iraq;IRQ;IQ;1
+Ireland;IRL;IE;1
+Iceland;ISL;IS;1
+Israel;ISR;IL;1
+Italy;ITA;IT;1
+Japan;JPN;JP;1
+Jordan;JOR;JO;1
+Kazakhstan;KAZ;KZ;1
+Kenya;KEN;KE;1
+Kyrgyzstan;KGZ;KG;1
+Latvia;LAT;LV;1
+Lebanon;LIB;LB;1
+Lithuania;LTU;LT;1
+Luxembourg;LUX;LU;1
+Macedonia;MKD;MC;1
+Madagascar;MAD;MG;1
+Malaysia;MAS;MY;1
+Mali;MLI;ML;1
+Malta;MLT;MT;1
+Morocco;MAR;MA;1
+Mauritania;MTN;MR;1
+Mexico;MEX;MX;1
+Micronesia;FSM;FM;1
+Moldova;MDA;MA;1
+Mongolia;MGL;MN;1
+Namibia;NAM;NA;1
+Nauru;NRU;NR;1
+Nepal;NEP;NP;1
+Nicaragua;NCA;NI;1
+Niger;NIG;NE;1
+Nigeria;NGR;NG;1
+Norway;NOR;NO;1
+New Zealand;NZL;NZ;1
+Uzbekistan;UZB;UZ;1
+Pakistan;PAK;PK;1
+Palau;PLW;PW;1
+Palestine;PLE;PE;1
+Panama;PAN;PA;1
+Paraguay;PAR;PY;1
+Peru;PER;PE;1
+Philippines;PHI;PH;1
+Poland;POL;PL;1
+Puerto Rico;PUR;PR;1
+Portugal;POR;PT;1
+Qatar;QAT;QA;1
+Romania;ROU;RO;1
+Russia;RUS;RU;1
+San Marino;SMR;SM;1
+El Salvador;ESA;SV;1
+Samoa;SAM;WS;1
+Senegal;SEN;SN;1
+Slovakia;SVK;SK;1
+Slovenia;SLO;SI;1
+Somalia;SOM;SO;1
+Sudan;SUD;SD;1
+Sri Lanka;SRI;LK;1
+Sweden;SWE;SE;1
+Switzerland;SUI;CH;1
+Suriname;SUR;SR;1
+Syria;SYR;SY;1
+Tajikistan;TJK;TJ;1
+Taipei;TPE;TP;1
+Tanzania;TAN;TZ;1
+Chad;CHA;TD;1
+Czech Republic;CZE;CZ;1
+Thailand;THA;TH;1
+Togo;TOG;TG;1
+Tunisia;TUN;TN;1
+Turkmenistan;TKM;TM;1
+Turkey;TUR;TR;1
+Ukraine;UKR;UA;1
+Uruguay;URU;UY;1
+Venezuela;VEN;VE;1
+Vietnam;VIE;VN;1
+Yemen;YEM;YE;1
+Serbia;SRB;RS;1
+Zimbabwe;ZIM;ZW;1
+United Arab Emirates;UAE;AE;1
+Uganda;UGA;UG;1
+Comoros;COM;KM;1
+Kiribati;KIR;KI;1
+Liberia;LBR;LR;1
+Sierra Leone;SLE;SL;1
+St Vincent and the Grenadines;VIN;VC;1
+Tonga;TGA;TO;1
+Haiti;HAI;HT;1
+Marshall Islands;MHL;MH;1
+Lao;LAO;LA;1
+Scotland;SCL;SP;1
+Bahamas;BAH;BS;1
+Gabon;GAB;GA;1
+Sao Tome and Principe;STP;ST;1
+Monaco;MCO;MC;1
+Indetermine;INC;XX;1
+None;NON;ZZ;1
+Montenegro;MNE;ME;1
+Kuwait;KUW;KW;1
+Zambia;ZAM;ZM;1
+Fiji;FIJ;FJ; 1
+Singapore;SIN;SG;1
+Andorra;AND;AD;1
+Belize;BIZ;BZ;1
+Bhutan;BHU;BT;1
+Botswana;BOT;BW;1
+Burundi;BDI;BI;1
+Djibouti;DJI;DJ;1
+Ghana;GHA;GH;1
+Ethiopia;ETH;ET;1
+Grenada;GRN;GD;1
+Lesotho;LES;LS;1
+Malawi;MAW;MW;1
+Rwanda;RWA;RW;1
+Liechtenstein;LIE;LI;1
+Libya;LBA;LY;1
+Swaziland;SWZ;SZ;1
+Eritrea;ERI;ER;1
+Mozambique;MOZ;MZ;1
+Seychelles;SEY;SC;1
+Equatorial Guinea;GEQ;GQ;1
+Maldives;MDV;MV;1
+Burma;MYA;BU;1
+Oman;OMA;OM;1
+Brunei;BRU;BR;1
+Antigua and Barbuda;ANT;AG;1
+Trinidad and Tobago;TRI;TT;1
+Saint Lucia;LCA;LC;1
+Saint Kitts and Nevis;SKN;KN;1
+Papua New Guinea;PNG;PG;1
+Vanuatu;VAN;VU;1
+Jamaica;JAM;JM;1
+Guyana;GUY;GY;1
+Barbados;BAR;BB;1
+Bahrain;BRN;BH;1
+Cape verde;CPV;CV;1
+Cayman Islands;CAY;KY;1
+Cook Islands;COK;CK;1
+Aruba;ARU;AW;1
+Bermuda;BER;BM;1
+East Timor;TLS;TP;1
+HongKong;HKG;HK;1
+Kosovo;KOS;XK;1
+Tuvalu;TUV;TV;1
