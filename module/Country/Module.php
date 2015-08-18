@@ -1,18 +1,12 @@
 <?php
-/**
- * Zend Framework (http://framework.zend.com/)
- *
- * @link      http://github.com/zendframework/ZendSkeletonApplication for the canonical source repository
- * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   http://framework.zend.com/license/new-bsd New BSD License
- */
 
 namespace Country;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
+use ZF\Apigility\Provider\ApigilityProviderInterface;
 
-class Module
+class Module implements ApigilityProviderInterface
 {
     public function onBootstrap(MvcEvent $e)
     {
@@ -36,4 +30,34 @@ class Module
             ),
         );
     }
+
+    /**
+     * @return array
+     */
+    public function getServiceConfig()
+    {
+        return [
+            'factories' => [
+                'Country\Repository\Country' =>
+                    'Country\Repository\Country\CountryRepositoryFactory',
+
+                'Country\Service\Country' =>
+                    'Country\Service\Country\CountryServiceFactory',
+            ]
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function getHydratorConfig()
+    {
+        return [
+            'factories' => [
+                'Country\Hydrator\Model\Country' =>
+                    'Country\Hydrator\Model\Country\CountryHydratorFactory',
+            ]
+        ];
+    }
+
 }

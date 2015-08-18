@@ -36,4 +36,21 @@ class Module
             ),
         );
     }
+
+    /**
+     * @return array
+     */
+    public function getServiceConfig()
+    {
+        return [
+            'factories' => [
+                'Country\Repository\Country' =>
+                    'Country\Repository\Country\CountryRepositoryFactory',
+
+                'JBIT\Service\ResourcePermissionService' =>
+                    'JBIT\Service\Permission\ResourcePermissionServiceFactory',
+            ]
+        ];
+    }
+
 }

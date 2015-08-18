@@ -1,8 +1,18 @@
 <?php
 
+namespace Country\Service;
 use Country\Entity\Country;
+use Country\Hydrator\Model\CountryHydrator;
+use Country\InputFilter\CountryInputFilter;
 use Country\Repository\CountryRepository;
 use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
+use JBIT\Exception\RepositoryException;
+use JBIT\Exception\Service\InvalidInputException;
+use JBIT\Exception\Service\ModelNotFoundException;
+use JBIT\Exception\Service\UnauthorizedException;
+use JBIT\Exception\ServiceException;
+use JBIT\Service\ResourcePermissionService;
+use JBIT\Utils;
 
 class CountryService
 {
@@ -19,7 +29,7 @@ class CountryService
     /**
      * @var CountryHydrator
      */
-    private $facilityHydrator;
+    private $countryHydrator;
 
     /**
      * @var CountryInputFilter
@@ -53,6 +63,7 @@ class CountryService
     {
         /** @var Country $country */
         $country = $this->countryRepository->find($id);
+
         if ($country === null) {
             throw new ModelNotFoundException(
                 sprintf('Country with identifier %d not found', $id)
@@ -78,13 +89,12 @@ class CountryService
     /**
      * @param array|Traversable|stdClass $data
      * @return Country
-     * @throws InvalidArgumentException
-     * @throws ServiceException
+     * @throws InvalidInputException
      */
     public function create($data)
     {
         /** @var CountryInputFilter $inputFilter */
-        $inputFilter = $this->getCreateInputFilter($data);
+        $inputFilter = $this->getInputFilter($data);
         if (!$inputFilter->isValid()) {
             throw new InvalidInputException(
                 'Unable to create country because of invalid input',
@@ -94,34 +104,33 @@ class CountryService
             );
         }
 
-        return $this->facilityHydrator->hydrate($inputFilter->getValues(), new Country());
+        return $this->countryHydrator->hydrate($inputFilter->getValues(), new Country());
     }
 
     /**
      * @param array|Traversable|stdClass|null $data
      * @return CountryInputFilter
      */
-    private function getCreateInputFilter($data = [])
+    private function getInputFilter($data = [])
     {
         if (!$this->inputFilter) {
-            $this->createInputFilter = new CountryInputFilter(
+            $this->inputFilter = new CountryInputFilter(
                 $this->countryRepository
             );
         }
-        return $this->inputFilter->setData($data);
+        return $this->inputFilter->setData((array)$data);
     }
 
     /**
      * @param array|Traversable|stdClass $data
      * @return Country
-     * @throws ModelNotFoundException
+     * @throws InvalidInputException
      * @throws UnauthorizedException
-     * @throws ServiceException
      */
     public function populate($data)
     {
         /** @var  $inputFilter */
-        $inputFilter = $this->getPopulateInputFilter($data);
+        $inputFilter = $this->getInputFilter($data);
 
         if (!$inputFilter->isValid()) {
             throw new InvalidInputException(
@@ -133,29 +142,18 @@ class CountryService
         }
 
         /** @var Country $country */
-        $country = $this->facilityHydrator->hydrate($inputFilter->getValues(), $this->countryRepository->find($inputFilter->getValue('id')));
+        $country = $this->countryHydrator->hydrate(
+                $inputFilter->getValues(),
+                $this->countryRepository->find($inputFilter->getValue('id'))
+        );
 
         if (!$this->resourcePermissionService->isAllowedToCountry($country, 'update')) {
             throw new UnauthorizedException(
                 sprintf('Not authorized to update country with identifier %d', $country->getId())
             );
         }
-
+print get_class($country);die;
         return $country;
-    }
-
-    /**
-     * @param array|Traversable|stdClass|null $data
-     * @return CountryInputFilter
-     */
-    private function getPopulateInputFilter($data = [])
-    {
-        if (!$this->inputFilter) {
-            $this->populateInputFilter = new CountryInputFilter(
-                $this->countryRepository
-            );
-        }
-        return $this->populateInputFilter->setData($data);
     }
 
     /**
@@ -168,6 +166,7 @@ class CountryService
         try {
             return $this->countryRepository->persist($country);
         } catch (RepositoryException $e) {
+            var_dump($e->getTraceAsString());die;
             throw new ServiceException('Failed to persist country', 0, $e);
         }
     }
@@ -183,7 +182,7 @@ class CountryService
     {
         $country = $this->find($id);
 
-        if (!$this->resourcePermissionService->isAllowedToFacility($country, 'delete')) {
+        if (!$this->resourcePermissionService->isAllowedToCountry($country, 'delete')) {
             throw new UnauthorizedException(
                 sprintf('Not authorized to delete country with identifier %d', $country->getId())
             );

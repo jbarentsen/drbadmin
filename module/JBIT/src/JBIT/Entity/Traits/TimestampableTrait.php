@@ -1,6 +1,6 @@
 <?php
 
-namespace JBIT\Entitiy\Traits;
+namespace JBIT\Entity\Traits;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;

@@ -3,16 +3,18 @@
 namespace Country\Repository;
 
 use Country\Entity\Country;
-use Doctrine\ORM\EntityRepository;
+use DoctrineORMModule\Paginator\Adapter\DoctrinePaginator;
 use Exception;
 use InvalidArgumentException;
+use JBIT\Repository\AbstractRepository;
 
-class CountryRepository extends EntityRepository
+class CountryRepository extends AbstractRepository
 {
+
     /**
      * @var string ModelClassName
      */
-    protected $modelClassName = 'Country\Model\Country';
+    protected $modelClassName = 'Country\Entity\Country';
 
     /**
      * @param Country $country
@@ -27,6 +29,7 @@ class CountryRepository extends EntityRepository
             $entityManager->flush();
             return $country;
         } catch (Exception $e) {
+            var_dump($e->getMessage());
             throw new InvalidArgumentException(
                 sprintf('Failed to persist country with identifier %d', $country->getId()),
                 0,
@@ -52,6 +55,22 @@ class CountryRepository extends EntityRepository
                 $e
             );
         }
+    }
+
+    /**
+     * Get paginator for items
+     *
+     * @return DoctrinePaginator
+     */
+    public function findAllPaged()
+    {
+        $em = $this->getEntityManager();
+        $qb = $em->createQueryBuilder();
+        $qb->select('u')
+            ->from($this->getClassName(), 'u')
+            ->orderBy('u.name');
+
+        return $this->getPaginator($qb->getQuery());
     }
 
 }

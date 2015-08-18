@@ -3,19 +3,22 @@
 namespace Country\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JBIT\Entitiy\Traits\TimestampableTrait;
+use Gedmo\Mapping\Annotation as Gedmo;
+use JBIT\Entity\Traits\TimestampableTrait;
+
+;
 
 /**
  * Country
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Country\Repository\CountryRepository")
  * @ORM\Table(name="Country")
  */
 class Country
 {
     /**
      * Hook timestampable behavior
-     * updates created, modifed fields
+     * updates createdAt, updatedAt fields
      */
     use TimestampableTrait;
 
@@ -52,7 +55,7 @@ class Country
     /**
      * @var boolean
      *
-     * @ORM\Column(type="boolean", length=5, nullable=false)
+     * @ORM\Column(type="boolean", nullable=true)
      */
     private $showInFrontEnd;
 
@@ -143,8 +146,48 @@ class Country
     public function setShowInFrontEnd($showInFrontEnd)
     {
         $this->showInFrontEnd = $showInFrontEnd;
+        $this->showInFrontEnd = true;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * @param mixed $created
+     * @return Country
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModified()
+    {
+        return $this->modified;
+    }
+
+    /**
+     * @param mixed $modified
+     * @return Country
+     */
+    public function setModified($modified)
+    {
+        $this->modified = $modified;;
+        return $this;
+    }
+
+
 
 
 }
