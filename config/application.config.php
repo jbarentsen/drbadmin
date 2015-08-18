@@ -9,11 +9,25 @@ return array(
     // This should be an array of module namespaces used in the application.
     'modules' => [
         'Application',
+        'ZF\Apigility',
+        'ZF\Apigility\Provider',
+        'AssetManager',
+        'ZF\ApiProblem',
+        'ZF\MvcAuth',
+        'ZF\OAuth2',
+        'ZF\Hal',
+        'ZF\ContentNegotiation',
+        'ZF\ContentValidation',
+        'ZF\Rest',
+        'ZF\Rpc',
+        'ZF\Versioning',
+        'ZF\DevelopmentMode',
         'DoctrineModule',
         'DoctrineORMModule',
         'ZfSimpleMigrations',
         'JBIT',
         'Country',
+        'User',
 
 
     ],
